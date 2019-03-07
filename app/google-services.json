@@ -1,59 +1,35 @@
 {
   "project_info": {
-    "project_number": "30519294348",
-    "firebase_url": "https://breaksecretary-66633.firebaseio.com",
-    "project_id": "breaksecretary-66633",
-    "storage_bucket": "breaksecretary-66633.appspot.com"
+    "project_number": "605212808878",
+    "firebase_url": "https://bkst-b9b25.firebaseio.com",
+    "project_id": "bkst-b9b25",
+    "storage_bucket": "bkst-b9b25.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:30519294348:android:5971383b32a2d102",
+        "mobilesdk_app_id": "1:605212808878:android:d8ae5bff39cae812",
         "android_client_info": {
-          "package_name": "com.breaktime.breaksecretary"
+          "package_name": "com.beacon.breaksecretary"
         }
       },
       "oauth_client": [
         {
-          "client_id": "30519294348-qdoeoctos74flgehamkes9oq7s6j78u1.apps.googleusercontent.com",
+          "client_id": "605212808878-i729rr5v7r14smr0d112bbd48pcg23ma.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.breaktime.breaksecretary",
-            "certificate_hash": "b18311e26d3bf384c809d41c72319a5428fe67d1"
+            "package_name": "com.beacon.breaksecretary",
+            "certificate_hash": "6c9dcffd93fa9d7b867baebdda21d9d753e2304d"
           }
         },
         {
-          "client_id": "30519294348-c7n4nhhpmskcvkm5vd08tf1fit66fu7h.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.breaktime.breaksecretary",
-            "certificate_hash": "f592804a0546800abf383710e2416a3b50c84147"
-          }
-        },
-        {
-          "client_id": "30519294348-3mbi5toqm4g9dg2p81q9l3rq68s0jqr1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.breaktime.breaksecretary",
-            "certificate_hash": "999a41124291e5f655c4899b70a0b71bfb71953f"
-          }
-        },
-        {
-          "client_id": "30519294348-kaotjhq1itoc218dmlkl2aefatfl4vk8.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.breaktime.breaksecretary",
-            "certificate_hash": "999a41124291e5f655c4899b70a0b71bfb71953f"
-          }
-        },
-        {
-          "client_id": "30519294348-nicn1rd8mi1vfges7t2h31c0j27go0hc.apps.googleusercontent.com",
+          "client_id": "605212808878-q6601ru1pi7olfjf04prhe5i01ivgvqt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDApQ3VFOIDxYuJqMbdwbLoIRfQ8CVo9Q0"
+          "current_key": "AIzaSyAfe4L5rsMSKPyaHEgng_f_-W-oy1sdzrk"
         }
       ],
       "services": {
@@ -64,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "30519294348-nicn1rd8mi1vfges7t2h31c0j27go0hc.apps.googleusercontent.com",
+              "client_id": "605212808878-q6601ru1pi7olfjf04prhe5i01ivgvqt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

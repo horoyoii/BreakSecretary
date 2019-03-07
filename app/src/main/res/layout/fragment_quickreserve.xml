@@ -38,36 +38,4 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary" />
 
-    <TextView
-        android:id="@+id/txt_sta"
-        android:layout_width="93dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="TextView"
-        android:textColor="@color/black"
-
-        custom:layout_constraintBottom_toTopOf="@+id/btn_quick_res"
-        custom:layout_constraintEnd_toEndOf="parent"
-        custom:layout_constraintStart_toStartOf="parent"
-        custom:layout_constraintTop_toTopOf="parent"
-        custom:layout_constraintVertical_bias="0.939" />
-
-    <Button
-        android:id="@+id/btn_rere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="다시;;"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
-        app:layout_constraintStart_toEndOf="@+id/txt_sta"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
-
 </android.support.constraint.ConstraintLayout>
