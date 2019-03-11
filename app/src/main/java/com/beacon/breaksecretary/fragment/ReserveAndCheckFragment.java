@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.beacon.breaksecretary.R;
 import com.beacon.breaksecretary.Util.FirebaseUtil;
+import com.beacon.breaksecretary.Util.Singleton;
 import com.beacon.breaksecretary.activity.MainActivity;
 import com.beacon.breaksecretary.activity.ShowingMapActivity;
 import com.beacon.breaksecretary.adapter.GridAdapter;
@@ -68,10 +69,10 @@ public class ReserveAndCheckFragment extends Fragment {
         adapter = new GridAdapter(((MainActivity)getActivity()).getApplicationContext(), sectionItems);
         gridView.setAdapter(adapter);
 
-        sectionItems.add(new Section("A", "0", "20"));
-        sectionItems.add(new Section("B", "0", "20"));
-        sectionItems.add(new Section("C", "0", "20"));
-        sectionItems.add(new Section("D", "0", "20"));
+        sectionItems.add(new Section("A", Singleton.getInstance().getUsingCounterSectionA(), "20"));
+        sectionItems.add(new Section("B", Singleton.getInstance().getUsingCounterSectionB(), "20"));
+        sectionItems.add(new Section("C", Singleton.getInstance().getUsingCounterSectionC(), "20"));
+        sectionItems.add(new Section("D", Singleton.getInstance().getUsingCounterSectionD(), "20"));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

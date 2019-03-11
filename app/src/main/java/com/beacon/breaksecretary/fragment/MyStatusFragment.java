@@ -44,7 +44,7 @@ public class MyStatusFragment extends Fragment implements Observer {
 
     private FrameLayout container_status;
     private Button button_stop;
-    private TextView sta, using_time;
+    private TextView sta, using_time, user_email, CurrentSeat;
     @Override
     public void onAttach(Context context) {
         Log.d(TAG, "onAttach()");
@@ -68,8 +68,10 @@ public class MyStatusFragment extends Fragment implements Observer {
         view = inflater.inflate(R.layout.fragment_mystatus, container, false);
         sta = view.findViewById(R.id.ms_txt_status);
         using_time = view.findViewById(R.id.ms_txt_time);
-
+        user_email = view.findViewById(R.id.txt_user_mail);
+        user_email.setText(Singleton.getInstance().getUserMail());
         button_stop = view.findViewById(R.id.button2);
+        CurrentSeat = view.findViewById(R.id.ms_txt_seat);
 
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(
                 messageReceiver, new IntentFilter(MyService.ACTION_COUNTER_USE));
@@ -153,6 +155,14 @@ public class MyStatusFragment extends Fragment implements Observer {
                 break;
             case STEPPING_OUT_OVER:
                 sta.setText("자리비움 초과");
+                button_stop.setText("초기화");
+                button_stop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mUser.user_step_out_over_confirm();
+                        sta.setTextSize(17);
+                    }
+                });
                 break;
             case SUBSCRIBING:
                 break;

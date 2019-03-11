@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.beacon.breaksecretary.Application.App;
 import com.beacon.breaksecretary.R;
 import com.beacon.breaksecretary.Util.FirebaseUtil;
 import com.beacon.breaksecretary.Util.Singleton;
@@ -37,8 +38,6 @@ import com.bumptech.glide.request.target.DrawableImageViewTarget;
 
  */
 public class SplashActivity extends AppCompatActivity {
-    private FirebaseUtil mFirebaseUtil;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,15 +62,13 @@ public class SplashActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.d("HHH", "Call onResume");
-
-        // ====================================
-        // 딜레이 주기 how to?
     }
 
     public void InitSetting(){
-        mFirebaseUtil = new FirebaseUtil();
-        Singleton.getInstance().Init(mFirebaseUtil, this);
+        Log.d("HHH", "Called initSetting in SplashActivity");
+        Singleton.getInstance().Init(((App)getApplication()).mFirebaseUtil, ((App)getApplication()).mUser,this);
     }
+
     public void CallBack_SingleTon_Done(){
 
         startActivity(new Intent(SplashActivity.this, MainActivity.class));

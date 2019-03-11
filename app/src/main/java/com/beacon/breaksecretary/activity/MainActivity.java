@@ -243,24 +243,42 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     }
 
-    public void startService(int major , int minor){
-        mUser.user_reserve(1,1);
+    public void startService(int section , int seat){
+        // TODO: 인자로 자리 섹터- 번호 를 받고
+        // 여기서 비콘 major minor로 변환한다.`
+        mUser.user_reserve(section,seat);
         Intent intent2 = new Intent(this, MyService.class);
-        intent2.putExtra(ReservingActivity.R_MAJOR, major);
-        intent2.putExtra(ReservingActivity.R_MINOR, minor);
+        intent2.putExtra(ReservingActivity.R_MAJOR, SectionToMajor(section));
+        intent2.putExtra(ReservingActivity.R_MINOR, SeatToMinor(seat));
         ContextCompat.startForegroundService(this, intent2);
 
         Intent intent = new Intent(this, ReservingActivity.class);
-        intent.putExtra("major", major);
-        intent.putExtra("minor", minor);
+        intent.putExtra("major", section);
+        intent.putExtra("minor", seat);
         startActivity(intent);
     }
 
     public void stopService(){
-        mUser.get_user_ref().child("status").setValue(User.Status_user.ONLINE);
+        //mUser.get_user_ref().child("status").setValue(User.Status_user.ONLINE);
+        mUser.user_stop();
         Intent intent = new Intent(this, MyService.class);
         this.stopService(intent);
     }
 
-
+    public int SectionToMajor(int sectionNum){
+        switch (sectionNum){
+            case 1:
+                return 1002;
+            case 2:
+                return 1002;
+            case 3:
+                return 1002;
+            case 4:
+                return 1002;
+        }
+        return 0;
+    }
+    public int SeatToMinor(int seatNum){
+        return 20;
+    }
 }

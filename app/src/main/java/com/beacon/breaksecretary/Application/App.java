@@ -20,8 +20,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d("App", "onCreate");
+        Log.d("App", "Application Class onCreate");
         createNotificationChannel();
+        mFirebaseUtil = new FirebaseUtil();
+        mUser = new User(mFirebaseUtil);
     }
 
     @Override

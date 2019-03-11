@@ -16,6 +16,7 @@ import com.beacon.breaksecretary.R;
 import com.beacon.breaksecretary.Util.FirebaseUtil;
 import com.beacon.breaksecretary.Util.Singleton;
 import com.beacon.breaksecretary.activity.MainActivity;
+import com.beacon.breaksecretary.activity.SplashActivity;
 import com.beacon.breaksecretary.model.User;
 
 import org.altbeacon.beacon.Beacon;
@@ -243,7 +244,7 @@ public class MyService extends Service implements BeaconConsumer, Observer {
 
         // 2) init Notifications
         Notify = new HashMap<>();
-        Intent notificationIntent = new Intent(this, MainActivity.class); // Notif 눌렀을 때 돌아갈 activity
+        Intent notificationIntent = new Intent(this, SplashActivity.class); // Notif 눌렀을 때 돌아갈 activity
         PendingIntent pendingIntent = PendingIntent.getActivity(this,
                 0, notificationIntent, 0);
         Notify.put(User.Status_user.RESERVING, new NotificationCompat.Builder(this, CHANNEL_ID)
@@ -258,6 +259,7 @@ public class MyService extends Service implements BeaconConsumer, Observer {
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setContentIntent(pendingIntent)
                 .build());
+
         Notify.put(User.Status_user.ONLINE, new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("자리비움")
                 .setContentText("자리비움중입니다.")

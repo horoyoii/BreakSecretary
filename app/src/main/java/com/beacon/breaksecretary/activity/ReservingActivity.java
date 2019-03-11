@@ -22,12 +22,16 @@ import com.dinuscxj.progressbar.CircleProgressBar;
 public class ReservingActivity extends BaseActivity implements Observer {
     public static final String R_MAJOR = "major";
     public static final String R_MINOR = "minor";
+    private int section, seatNum;
+
     Button cancel;
     @Override
     public void update(User.Status_user status) {
         Log.d("TTT", "Call update in RA :"+status);
         switch (status){
             case OCCUPYING:
+                Singleton.getInstance().setCurrentSection(Singleton.getInstance().ToSection(section));
+                Singleton.getInstance().setCurrentSeatNum(seatNum);
                 finish();
                 break;
             case RESERVING_OVER:
@@ -73,11 +77,13 @@ public class ReservingActivity extends BaseActivity implements Observer {
         ((App)getApplicationContext()).ma.registerObserver(this);
 
         Intent intent = getIntent();
-        int mj = intent.getIntExtra(R_MAJOR, 0);
-        int mi = intent.getIntExtra(R_MINOR, 0);
+        section = intent.getIntExtra(R_MAJOR, 0);
+
+        seatNum = intent.getIntExtra(R_MINOR, 0);
 
         TextView textView = findViewById(R.id.rsv_txt);
-        String us = "Go To \nMajor : "+String.valueOf(mj)+"\nMinor : "+String.valueOf(mi);
+        String us = "Go To \nSection : "+Singleton.getInstance().ToSection(section)+"\nSeat : "+String.valueOf(seatNum);
+
         textView.setText(us);
 
         cancel = findViewById(R.id.rsv_cancel);
@@ -99,5 +105,6 @@ public class ReservingActivity extends BaseActivity implements Observer {
             mProgressBar.setProgress(dis);
         }
     };
+
 
 }

@@ -34,15 +34,17 @@
             android:name=".activity.FirstActivity"
             android:icon="@mipmap/ic_launcher"
             android:roundIcon="@mipmap/ic_launcher_round"
-            android:theme="@style/AppTheme.NoActionBar_StatusBar">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.ShowingMapActivity" />
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.ShowingMapActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -68,6 +68,9 @@ public class User implements Serializable {
     // [START]DON'T USE THESE FUNCTIONS. THEY'RE FOR FIREBASE REALTIME DATABASE
     // getters
 
+    public DatabaseReference getmUserRef(){
+        return mUserRef;
+    }
 
 
     public String getStatus() {
@@ -375,9 +378,13 @@ public class User implements Serializable {
 
     @Exclude
     public void user_reserve(final Integer num_section, Integer num_seat) {
+        if(num_seat < 10)
+            mFirebaseUtil.getSeatsRef().child(num_section.toString()).child("_0" + num_seat.toString()).setValue(mFirebaseUtil.getAuth().getUid());
+        else
+            mFirebaseUtil.getSeatsRef().child(num_section.toString()).child("_" + num_seat.toString()).setValue(mFirebaseUtil.getAuth().getUid());
 
-        mFirebaseUtil.getSeatsRef().child(num_section.toString()).child("_" + num_seat.toString()).setValue(mFirebaseUtil.getAuth().getUid());
         Log.d(TAG, "user reserve");
+        Log.d(TAG, "sec"+num_section.toString()+" : "+num_seat.toString());
         setStatusForSingleEvent(Status_user.RESERVING);
         setNum_sectionForSingleEvent(num_section);
         setNum_seatForSingleEvent(num_seat);
@@ -402,7 +409,11 @@ public class User implements Serializable {
                 getNum_seatForSingleEvent(new MyCallback<Integer>() {
                     @Override
                     public void onCallback(Integer seatnum) {
-                        mFirebaseUtil.getSeatsRef().child(section.toString()).child("_" + seatnum.toString()).setValue("None");
+                        if(seatnum<10)
+                            mFirebaseUtil.getSeatsRef().child(section.toString()).child("_0" + seatnum.toString()).setValue("None");
+                        else
+                            mFirebaseUtil.getSeatsRef().child(section.toString()).child("_" + seatnum.toString()).setValue("None");
+
                         Log.d(TAG, "user cancel reservation");
                         setStatusForSingleEvent(Status_user.ONLINE);
                         setNum_sectionForSingleEvent(null);
@@ -428,7 +439,10 @@ public class User implements Serializable {
                 getNum_seatForSingleEvent(new MyCallback<Integer>() {
                     @Override
                     public void onCallback(Integer seatnum) {
-                        mFirebaseUtil.getSeatsRef().child(section.toString()).child("_" + seatnum.toString()).setValue("None");
+                        if(seatnum<10)
+                            mFirebaseUtil.getSeatsRef().child(section.toString()).child("_0" + seatnum.toString()).setValue("None");
+                        else
+                            mFirebaseUtil.getSeatsRef().child(section.toString()).child("_" + seatnum.toString()).setValue("None");
                         Log.d(TAG, "user reservation over");
                         setStatusForSingleEvent(Status_user.RESERVING_OVER);
                         setNum_sectionForSingleEvent(null);
@@ -472,7 +486,10 @@ public class User implements Serializable {
                 getNum_seatForSingleEvent(new MyCallback<Integer>() {
                     @Override
                     public void onCallback(Integer seatnum) {
-                        mFirebaseUtil.getSeatsRef().child(section.toString()).child("_" + seatnum.toString()).setValue("None");
+                        if(seatnum<10)
+                            mFirebaseUtil.getSeatsRef().child(section.toString()).child("_0" + seatnum.toString()).setValue("None");
+                        else
+                            mFirebaseUtil.getSeatsRef().child(section.toString()).child("_" + seatnum.toString()).setValue("None");
                         Log.d(TAG, "user stop");
                         setStatusForSingleEvent(Status_user.ONLINE);
                         mUserRef.child("ts_occupy").removeValue();

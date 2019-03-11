@@ -2,11 +2,10 @@ package com.beacon.breaksecretary.model;
 
 public class Section {
     String sectionNum;
-    String reserveNum;
+    int reserveNum;
     String totallNum;
 
-    public Section(String sectionNum, String reserveNum, String totallNum)
-    {
+    public Section(String sectionNum, int reserveNum, String totallNum) {
         this.sectionNum = sectionNum;
         this.reserveNum = reserveNum;
         this.totallNum = totallNum;
@@ -16,7 +15,7 @@ public class Section {
         return sectionNum;
     }
 
-    public String getReserveNum() {
+    public int getReserveNum() {
         return reserveNum;
     }
 
@@ -28,7 +27,7 @@ public class Section {
         this.sectionNum = sectionNum;
     }
 
-    public void setReserveNum(String reserveNum) {
+    public void setReserveNum(int reserveNum) {
         this.reserveNum = reserveNum;
     }
 

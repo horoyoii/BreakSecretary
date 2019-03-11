@@ -17,7 +17,8 @@
             android:id="@+id/tab_layout_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="@color/colorAccent" />
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabBackground="@color/MainColor"/>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager

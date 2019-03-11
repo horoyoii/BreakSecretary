@@ -68,7 +68,7 @@ public class QuickReserveFragment extends Fragment implements Observer {
         quick_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mActivity.startService(1002, 20);
+                mActivity.startService(1, 2);
             }
         });
 
@@ -92,7 +92,7 @@ public class QuickReserveFragment extends Fragment implements Observer {
                     quick_btn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            mActivity.startService(1002, 20);
+                            mActivity.startService(1, 2);
                         }
                     });
                     break;

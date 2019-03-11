@@ -21,6 +21,7 @@ public class SectionItem extends LinearLayout {
     public SectionItem(Context context) {
         super(context);
         View view = LayoutInflater.from(context).inflate(R.layout.custom_section_item, this);
+
         txtSectionName = (TextView)findViewById(R.id.txt_section_name);
         txtReserveNum = (TextView)findViewById(R.id.txt_reserve_num);
         txtTotalNum = (TextView)findViewById(R.id.txt_total_num);
@@ -28,12 +29,15 @@ public class SectionItem extends LinearLayout {
         pbReserve = (ProgressBar)findViewById(R.id.pb_reserve);
     }
 
-    public void setData(Section section)
-    {
+    public void setData(Section section) {
         txtSectionName.setText(section.getSectionNum());
-        txtReserveNum.setText(section.getReserveNum());
+        txtReserveNum.setText(String.valueOf(section.getReserveNum()));
         txtTotalNum.setText(section.getTotallNum());
-        //ToDo: 프로그레스바 조정
+
+        //DONE: 프로그레스바 조정
+        pbReserve.setMax(20);
+        pbReserve.setProgress(section.getReserveNum());
+
     }
 
     public String getSectionName()
