@@ -31,8 +31,9 @@ https://blog.naver.com/demonic3540/221489455231
 
 ## 4. What I've Experienced.
 
-1. awefawef  
-2. awef awef  
+1. [서비스] 서버가 따로 없었기에 안드로이드 컴포넌트 중 하나인 서비스에 크게 의존할 수밖에 없었다. 그렇기에 포그라운드 서비스를 구현해야 했으며
+Always on Notification 등 서비스에 대한 더 깊은 이해가 가능했다.
+2. [디자인 패턴]   
 
 
 
