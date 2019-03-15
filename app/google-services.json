@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "605212808878-k81neuv7r474bkd87fvvnlhdq8m9g0lf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.beacon.breaksecretary",
+            "certificate_hash": "6b89d201f808f435e57f624fcfe15ad12c6d748a"
+          }
+        },
+        {
           "client_id": "605212808878-q6601ru1pi7olfjf04prhe5i01ivgvqt.apps.googleusercontent.com",
           "client_type": 3
         }

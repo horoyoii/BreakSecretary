@@ -181,7 +181,9 @@ public class FirstActivity extends BaseActivity implements View.OnClickListener{
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             hide_progress_dialog();
-                            startActivity(new Intent(FirstActivity.this, MainActivity.class));
+//                            startActivity(new Intent(FirstActivity.this, MainActivity.class));
+//                            finish();
+                            startActivity(new Intent(FirstActivity.this, SplashActivity.class));
                             finish();
                         } else {
                             // If sign in fails, display a message to the user.

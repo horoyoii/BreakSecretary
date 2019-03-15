@@ -23,7 +23,7 @@ public class App extends Application {
         Log.d("App", "Application Class onCreate");
         createNotificationChannel();
         mFirebaseUtil = new FirebaseUtil();
-        mUser = new User(mFirebaseUtil);
+        //mUser = new User(mFirebaseUtil);
     }
 
     @Override
