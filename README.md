@@ -23,5 +23,13 @@ BLE Beacon ( iBeacon )
 
 
 
+## 3. Demonstration ScreenShot  
 
+
+
+
+
+
+## 4. Team Members  
+ 최광영 이희관 이영민
 
